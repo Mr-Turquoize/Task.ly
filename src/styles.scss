@@ -1,0 +1,339 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+li {
+  list-style: none;
+  word-break: break-all;
+}
+
+p{
+  margin:0 10px;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+*:focus {
+  outline: none;
+  border: 1px solid black;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+$bg: rgb(49, 49, 49);
+$bg2: #242424;
+$bg3: #141414ec;
+$bg4: #191911ec;
+$theme: rgb(242, 50, 105);
+$text: rgb(218, 215, 211);
+
+
+@mixin btn {
+  outline: none;
+  border: none;
+  padding: 0.8em;
+  margin:1em 2em;
+  font-weight: bold;
+  color : black;
+  background-color: $theme;
+}
+
+#root {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2em;
+  background-color: $bg;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2em;
+  font-family: sans-serif;
+  padding: 0.5em;
+  color: black;
+  font-weight: bold;
+  background-color: rgba(242, 50, 105,0.89);
+  border-bottom: 1px solid black;
+  border-left : 1px solid black;
+
+  .l {
+    color: yellow;
+    font-family: serif;
+    font-size: 1.2em;
+  }
+
+}
+
+.display {
+  height: 100vh;
+  display: grid;
+  font-size: 0.9em;
+  grid-template-columns: 30% 70%;
+}
+
+
+
+.list {
+  color: $text;
+  font-size: 0.7em;
+  text-align: center;
+  background-color: $bg2;
+  border-right: 3px solid black;
+
+  h2 {
+    padding: 1.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &:hover {
+      background-color: $bg;
+      cursor: pointer;
+      i {
+        color: aqua;
+      }
+    }
+  }
+
+  i {
+    color: $theme;
+    font-size: 1em;
+    margin-right: 15px;
+  }
+
+  li {
+    &:hover {
+      i {
+        color: aqua;
+      }
+    }
+  }
+
+  .fa-plus {
+    margin-left: 1.4em;
+    &:hover{
+      transform: scale(1.5);
+    }
+  }
+}
+
+.fa-bars:hover{
+  cursor : pointer; 
+  &:hover{
+    transform: scale(1.5);
+  }
+}
+
+.fa-trash-o:hover{
+  cursor: pointer;
+}
+
+
+.addNote {
+  font-size: 1.9em;
+  &:hover {
+    color: $theme;
+  }
+}
+
+.categoryElement {
+  color: $text;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1em;
+  font-size: 1.7em;
+  background-color: $bg2;
+  &:hover {
+    background-color: $bg;
+    cursor: pointer;
+  }
+  i {
+    margin-left: 1.2em;
+  }
+}
+
+.show {
+  color: white;
+  background-color: $bg3;
+
+  h2 {
+    padding: 1em;
+    text-align: center;
+    color: rgba(255, 255, 0, 0.856);
+    background-color: $bg;
+    border-bottom: 2px solid black;
+  }
+
+  li {
+    color: honeydew;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    i {
+      color: gold;
+    }
+  }
+
+  input {
+    outline: none;
+    border: none;
+    margin-left: auto;
+  }
+
+  i {
+    margin-right: 15px;
+  }
+}
+
+.descElement{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1em;
+  border-bottom: 1px solid darkgray;
+}
+
+
+.addNoteForm {
+  display: none;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 25em;
+  padding: 2em;
+  font-size: 1em;
+  color : whitesmoke;
+  border-radius: 15px;
+  background-color: $bg2;
+  transform: translate(-50%, 0);
+  border: 1px solid darkgray;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  label {
+    font-size: 1.5em;
+    font-family: sans-serif;
+  }
+  input,
+  textarea {
+    margin: 2em 0;
+    width: 100%;
+    height: 3em;
+    border-radius: 15px;
+    text-align: center;
+  }
+  button {
+    @include btn;
+  }
+}
+
+#category-input {
+  padding: 1em;
+  color: white;
+  outline: none;
+  width: 100%;
+  font-weight: bold;
+  background-color: $bg;
+  border: 1px solid $theme;
+}
+
+.highlight {
+  background-color: $bg3;
+  color: white;
+  i {
+    color: aqua;
+  }
+  &:hover {
+    background-color: $bg3;
+  }
+}
+
+.rotateDown {
+  animation: 0.1s rotatedown ease-in-out forwards;
+}
+
+@keyframes rotatedown {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+.rotateUp {
+  animation: 0.1s rotateup ease-in-out forwards;
+}
+
+@keyframes rotateup {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.strike {
+  text-decoration: line-through;
+  color: darkgray;
+}
+
+.appear{
+  display: block;
+}
+
+.blur{
+  opacity: 0.1;
+}
+
+
+@media (max-width:800px){
+
+  .display{
+    grid-template-columns: 40% 60%;
+  }
+}
+
+@media (max-width:600px){
+
+  body{
+    font-size:0.8rem;
+  }
+
+  .display{
+    grid-template-columns: 40% 60%;
+  }
+}
+
+@media (max-width:450px){
+
+  body{
+    font-size:0.6rem;
+  }
+
+  .display{
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media (max-width:300px){
+
+  body{
+    font-size:0.4rem;
+  }
+}

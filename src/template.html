@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task.ly</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="root">
+
+        <div class="display">
+
+            <section class="list">
+                <h2 class = "addNote"><i class="fas fa-plus-square"></i>Add Note</h2>
+                <h2 class = "addCategory"><i class="fas fa-chevron-right"></i>Categories<i class="fas fa-plus"></i></h2>
+                <ul class="Categories"></ul>
+            </section>
+
+            <section class="show">
+                <h1 class="heading">Task<span class='l'>!</span>y</h1>
+                <ul class="Tasks"></ul>
+            </section>
+        </div>
+
+            <form class="addNoteForm">
+                 <label for="noteTitle">Note Title</label><br>
+                 <input type="text" id="noteTitle" name="noteTitle"><br>
+ 
+                 <label for="noteDate">Due Date</label><br>
+                 <input type="date" id="noteDate" name="noteDate"><br>
+ 
+                 <label for="noteColor">Select Priority</label><br>
+                 <input type="color" id="noteColor" name="noteColor"><br>
+ 
+                 <div class="addNoteBtn">
+                     <button class="cancelNote">Cancel</button>
+                     <button class="submitNote">Submit</button>
+                 </div>
+             </form>
+
+    </div>
+
+</body>
+
+</html>
